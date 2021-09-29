@@ -52,7 +52,7 @@ $cadena2, mostrar por pantalla el contenido de $cadena1<br>
         $cadena2 = "mi nombre es Daniel Gomez Checa";
         $cadena3 = $cadena1 . " " . $cadena2;
         echo $cadena3, "<br>";
-        $cadena1 = "$cadena1 $cadena2";
+        $cadena1 .= "$cadena2";
         echo $cadena1, "<br>";
     ?>
 
