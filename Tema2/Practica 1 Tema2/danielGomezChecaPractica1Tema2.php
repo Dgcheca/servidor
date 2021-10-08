@@ -367,9 +367,30 @@ pueda apreciar claramente el funcionamiento de la cola llamando a todas las<br>
 funciones implementadas<br>
 </p><br>
 
-<?php
+<?php //este he terminado corrigiendolo entero con lo que subiste
+ 
+    function addFifo(&$cola, $valores) {
+        foreach($valores as $valor) {
+            array_unshift($cola, $valor);
+        }
+    }
 
+    function mostrarFifo($cola) {
+        echo "<br>";
+        foreach($cola as $valor) 
+            echo $valor." ";
+    }
 
+    function eliminarFifo(&$cola) {
+        return array_pop($cola);
+    }
+
+    $fifo = array("a","b");
+    mostrarFifo($fifo);
+    addFifo($fifo, array("c","d"));
+    mostrarFifo($fifo);
+    eliminarFifo($fifo);
+    mostrarFifo($fifo);
 
 ?><br>
 
