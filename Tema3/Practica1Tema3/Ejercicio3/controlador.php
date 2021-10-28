@@ -1,22 +1,34 @@
 <?php
-    session_start();
+session_start();
 
+include("./lib/lib.php");
 
-if ($_POST){
-    if (isset($_POST['comprar'])){
-        //echo "has comprado una tarjeta id= " . $_POST['id'];
-
-        if (isset($_SESSION['carrito'])){
-            array_unshift($_SESSION['carrito'], array("id" => $_POST['id'], "cant" => 1 ));
-        } else {
-            $_SESSION['carrito'] = array();
-            array_unshift($_SESSION['carrito'], array("id" => $_POST['id'], "cant" => 1 ));
+    if ($_POST) {
+        if (isset($_POST['comprar'])) {
+            if (isset($_SESSION['carrito'])) { 
+                if (encontrado($_POST['id'],$_SESSION['carrito'])) {
+                    update($_POST['id'],$_POST['cantidad'],$_SESSION['carrito']);
+                } else {      
+                    array_unshift($_SESSION['carrito'], array("id" =>$_POST['id'], "cant" => $_POST['cantidad'] ));
+                }
+            } else {
+                $_SESSION['carrito'] = array(); 
+                array_unshift($_SESSION['carrito'], array("id" =>$_POST['id'], "cant" => $_POST['cantidad'] ));
+            }
+            header("Location: index.php",false);
+            exit;
         }
-
-        header("Location: index.php");
-        exit;
     }
-}
-
-
+    if ($_GET) {
+        if (isset($_GET['accion'])) {
+            if ($_GET['accion'] == "borrar") {
+                $ids = array_column($_SESSION['carrito'], 'id');
+                $found_key = array_search($_GET['id'], $ids);
+                unset($_SESSION['carrito'][$found_key]);
+                $_SESSION['carrito'] = array_values($_SESSION['carrito']);
+                header("Location: verCarro.php",false);
+                exit;
+            }
+        }
+    }
 ?>
