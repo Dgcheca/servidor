@@ -1,0 +1,45 @@
+.container{
+    
+    float: left;
+    border: solid 2px;
+    border-color: black;
+    padding: 15px;
+}
+
+.oponentes{
+    display: inline-block;
+    
+}
+
+.oponente{
+    display: inline-block;
+    border: solid 1px;
+    border-color: black;
+    margin: 10px;
+    padding: 10px;
+    height: 160px;
+    width: 220px;
+
+}
+.jugador{
+    display: block;
+    border: solid 1px;
+    border-color: black;
+    margin: 10px;
+    padding: 10px;
+    height: 160px;
+    width: 220px;
+}
+.bolasmostradas{
+    
+    border: solid 1px;
+    border-color: black;
+    margin:10px auto;
+    padding: 10px;
+    height: 160px;
+    width: 400px;
+    
+}
+.cabecero{
+    margin:10px auto;
+}
