@@ -1,0 +1,24 @@
+.ahorcadoPortada{
+    border-width: 1px;
+    background-color: lightgray;
+}
+main{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.letra{
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+}
+
+.nuevaPartida{
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+}
+.monigote{
+    margin: 10px;
+}

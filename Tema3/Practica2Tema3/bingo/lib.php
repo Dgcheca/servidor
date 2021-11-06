@@ -16,6 +16,7 @@
             }
             if (comprobarLinea($carton[$i])) { //COMPRUEBA CADA LINEA Y LA MARCA EN CASO DE QUE SE ACIERTEN TODAS LAS BOLAS
                 echo "<strong>------LINEA-------</strong>";
+     
                 $bingo++; //SUMA UNO AL CONTADOR PARA COMPROBAR EL BINGO
             }
             echo "<br>";
