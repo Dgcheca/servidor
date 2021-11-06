@@ -22,7 +22,7 @@ session_start();
 
             <?php
             if (isset($_SESSION['palabra'])) { //SI YA SE HA ELEGIDO PALABRA, ENTRAMOS EN PARTIDA
-                if ($_SESSION['errores'] <= 6) { //MIENTRAS TENGAS MENOS DE 6 ERRORES
+                if ($_SESSION['errores'] < 6) { //MIENTRAS TENGAS MENOS DE 6 ERRORES
                     if ($_SESSION['palabra'] == $_SESSION['palabraAdivinar']) { //SI LA PALABRA A ADIVINAR YA SE HA CONVERTIDO ENTERA EN LA ORIGINAL, HAS GANADO
                         echo "<div class='mensajeVictoria'>";
                         echo "<h1>HAS GANADO!</h1>";
@@ -60,7 +60,7 @@ session_start();
                 } else {
                     echo "<h1>HAS PERDIDO!</h1>";
                     echo "<div class='monigote'>";
-                    echo "<img src='img/i7.png' alt=''>";
+                    echo "<img src='img/i6.png' alt=''>";
                     echo "</div>";
                     echo "<form action='controlador.php' method='get'>";
                     echo "<button class='nuevaPartida' type='submit' name='nuevaPartida'>Nueva Partida</button>";
