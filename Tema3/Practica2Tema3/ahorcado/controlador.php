@@ -1,6 +1,5 @@
 <?php
 session_start();
-include "lib.php";
 
 $palabras = array(
     "humanidad", "humano", "persona", "gente", "hombre", "mujer", "bebe", "adolescente", "adulto", "anciano", "don", "caballero", "dama", "individuo",
