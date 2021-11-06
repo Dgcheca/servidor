@@ -12,7 +12,7 @@
 					</button>
 					<div class="collapse" id="tema3">
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="/tema3/Practica1Tema3/Ejercicio1/" class="link-dark rounded">Ejercicio1</a></li>
+					<li><a href="/tema3/Practica1Tema3/Ejercicio1/index.php" class="link-dark rounded">Ejercicio1</a></li>
 					<li><a href="/tema3/Practica1Tema3/Ejercicio2/" class="link-dark rounded">Ejercicio2</a></li>
 					<li><a href="/tema3/Practica1Tema3/Ejercicio3/" class="link-dark rounded">Ejercicio3</a></li>
 					<li><a href="/tema3/Practica1Tema3/Ejercicio4/" class="link-dark rounded">Ejercicio4</a></li>
