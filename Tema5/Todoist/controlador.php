@@ -15,7 +15,7 @@ include("lib.php");
         if (isset($_GET['accion'])){
             if ($_GET['accion'] == "borrarTarea") {
                 $id = $_GET['id'];
-                $tareas = leerArchivo("");
+                $tareas = leerArchivo();
                 file_put_contents("tasks.txt","", LOCK_EX);
                 foreach ($tareas as $tarea) {
                     if ($tarea[0] != $id) {

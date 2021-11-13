@@ -1,7 +1,3 @@
-<?php
-include("lib.php");
-$tareas = leerArchivo("");
-?>
 <!doctype html>
 <html lang="en">
 
@@ -11,7 +7,7 @@ $tareas = leerArchivo("");
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>TODOIST</title>
+    <title>Carousel Template · Bootstrap v5.0</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
@@ -27,14 +23,14 @@ $tareas = leerArchivo("");
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-success">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">TODOIST</a>
+                <a class="navbar-brand" href="#">TODOIST</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalNuevo">Nuevo</a>
@@ -56,9 +52,9 @@ $tareas = leerArchivo("");
                         <label class="col col-form-label">Selecciona fecha:</label>
                     </div>
                     <div class="row">
-                        <form action='index.php' method='get'>
-                            <input type='date' name='fecha' value='<?= $_GET['fecha']; ?> '>
-                            <input type="submit" name='porFecha' value="Cambiar">
+                        <form action='controlador.php' method='get'>
+                            <input type='date' name='fecha'>
+                            <input type="submit" value="Cambiar">
                         </form>
                     </div>
                 </div>
@@ -68,48 +64,24 @@ $tareas = leerArchivo("");
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col"><?= "<a href='index.php?ordenar=fecha'>Fecha límite</a>" ?></th>
-                                <th scope="col"><?= "<a href='index.php?ordenar=prioridad'>Prioridad</a>" ?></th>
+                                <th scope="col">Fecha límite</th>
+                                <th scope="col">Prioridad</th>
                                 <th scope="col">Terminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            if ($_GET) {
-                                if (isset($_GET['ordenar'])) {
-                                    if ($_GET['ordenar'] == 'fecha') {
-                                        $fechaOrdenada = array_column($tareas, 2);
-                                        array_multisort($fechaOrdenada, $tareas);
-                                    }
-                                    if ($_GET['ordenar'] == 'prioridad') {
-                                        $prioridadOrdenada = array_column($tareas, 3);
-                                        array_multisort($prioridadOrdenada, $tareas);
-                                    }
-                                }
-                                //Controlo que haya pinchado por fecha o no
-                                $mensaje = "Todas las tareas";
-                                if (isset($_GET['porFecha'])) {
-                                    $tareas = leerArchivo($_GET['fecha']);
-                                    $mensaje = "Tareas con fecha límite en " . $_GET['fecha'];
-                            }
-                        }
+                            include_once("lib.php");
+                            include ("modelo.php");
+                            $tareas = leerArchivo();
+
                             foreach ($tareas as $tarea) {
-                                if (strtotime($tarea[2]) < time()) {
-                                    echo "<tr class='bg-danger'>";
-                                } else {
-                                    echo "<tr>";
-                                }
-                                echo "<td>$tarea[0]</td>";
+                                echo "<tr> ";
+                                echo "<th scope='row'>$tarea[0]</th>";
                                 echo "<td>$tarea[1]</td>";
                                 echo "<td>$tarea[2]</td>";
-                                if ($tarea[3] == 1) {
-                                    echo "<td>'Importante</td>";
-                                } else if ($tarea[3] == 2) {
-                                    echo "<td>'Media</td>";
-                                } else if ($tarea[3] == 3) {
-                                    echo "<td>'Baja</td>";
-                                }
-
+                                echo "<td>$tarea[3]</td>";
+                            
                                 echo "<td><a href='controlador.php?accion=borrarTarea&id={$tarea[0]}'>";
                                 echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#31873C" class="bi bi-calendar-x" viewBox="0 0 16 16">
                     <path d="M6.146 7.146a.5.5 0 0 1 .708 0L8 8.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 9l1.147 1.146a.5.5 0 0 1-.708.708L8 9.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 9 6.146 7.854a.5.5 0 0 1 0-.708z"/>
@@ -118,7 +90,7 @@ $tareas = leerArchivo("");
                                 echo "</a></td>";
                                 echo "</tr>";
                             }
-
+                            
                             ?>
                         </tbody>
                     </table>
@@ -144,9 +116,9 @@ $tareas = leerArchivo("");
                         <input name="fecha" class="form-control form-control-lg" type="date" placeholder="fecha">
                         <br>
                         <select name="prioridad" class="form-select">
-                            <option selected value="3">Baja</option>
-                            <option value="2">Media</option>
-                            <option value="1">Importante</option>
+                            <option selected value="Baja">Baja</option>
+                            <option value="Media">Media</option>
+                            <option value="Importante">Importante</option>
                         </select>
                 </div>
                 <div class="modal-footer">

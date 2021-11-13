@@ -1,16 +1,9 @@
 <?php
-    function leerArchivo($fecha){
+    function leerArchivo(){
         $tareas = array();
         $lineasFichero = file("tasks.txt");
         foreach ($lineasFichero as $linea) {
-            if (strlen($fecha) > 0) {
-                $tarea = explode("|",$linea);
-                if ($tarea[2] <= $fecha) {
-                    array_push($tareas,$tarea);
-                }
-            } else {
-                array_push($tareas,explode("|",$linea));
-            }
+            array_push($tareas,explode("|",$linea));
         }
         return $tareas;
     }
@@ -24,7 +17,7 @@
     }
     
     function nuevaTarea($nombre, $fecha, $prioridad){
-        $tareas = leerArchivo("");
+        $tareas = leerArchivo();
         $id = 0;
         foreach ($tareas as $linea) {
             if ($linea[0] > $id) {
@@ -36,3 +29,4 @@
         file_put_contents("tasks.txt",$tarea, FILE_APPEND | LOCK_EX);
         header("Location:index.php");
     }
+?>
