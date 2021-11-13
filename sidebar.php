@@ -25,10 +25,10 @@
 					</button>
 					<div class="collapse" id="tema4">
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="/Tema3/Practica1Tema4/Diccionario/index.php" class="link-dark rounded">Diccionario</a></li>
-					<li><a href="/Tema3/Practica1Tema4/GestionDeTareas/index.php" class="link-dark rounded">GestionDeTareas</a></li>
-					<li><a href="/Tema3/Practica1Tema4/LyGWebsCompletas/index.php" class="link-dark rounded">LyGWebsCompletas</a></li>
-					<li><a href="/Tema3/Practica1Tema4/Tienda/index.php" class="link-dark rounded">Tienda</a></li>							
+					<li><a href="/Tema4/Practica1Tema4/Diccionario/index.php" class="link-dark rounded">Diccionario</a></li>
+					<li><a href="/Tema4/Practica1Tema4/GestionDeTareas/index.php" class="link-dark rounded">GestionDeTareas</a></li>
+					<li><a href="/Tema4/Practica1Tema4/LyGWebsCompletas/index.php" class="link-dark rounded">LyGWebsCompletas</a></li>
+					<li><a href="/Tema4/Practica1Tema4/Tienda/index.php" class="link-dark rounded">Tienda</a></li>							
 					</ul>
 					</div>
 				</li>
