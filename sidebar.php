@@ -23,7 +23,7 @@
 					<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema4" aria-expanded="false">
 					TEMA 4
 					</button>
-					<div class="collapse" id="tema3">
+					<div class="collapse" id="tema4">
 					<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="/Tema3/Practica1Tema4/Diccionario/index.php" class="link-dark rounded">Diccionario</a></li>
 					<li><a href="/Tema3/Practica1Tema4/GestionDeTareas/index.php" class="link-dark rounded">GestionDeTareas</a></li>
