@@ -28,7 +28,8 @@
 					<li><a href="/Tema4/Practica1Tema4/Diccionario/index.php" class="link-dark rounded">Diccionario</a></li>
 					<li><a href="/Tema4/Practica1Tema4/GestionDeTareas/index.php" class="link-dark rounded">GestionDeTareas</a></li>
 					<li><a href="/Tema4/Practica1Tema4/LyGWebsCompletas/index.php" class="link-dark rounded">LyGWebsCompletas</a></li>
-					<li><a href="/Tema4/Practica1Tema4/Tienda/index.php" class="link-dark rounded">Tienda</a></li>							
+					<li><a href="/Tema4/Practica1Tema4/Tienda/index.php" class="link-dark rounded">Tienda</a></li>		
+					<li><a href="/Tema4/Practica1Tema4/CarritoPDF/index.php" class="link-dark rounded">TiendaV2 (con pdf y email)</a></li>				
 					</ul>
 					</div>
 				</li>
