@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER["DOCUMENT_ROOT"] . "/cabecera.php");
+include_once("cabecera.php");
 ?>
 
       <div class="col-md-10 themed-grid-col">
@@ -12,5 +12,5 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/cabecera.php");
     </div>
 
 <?php
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/pie.php");
+    include_once("pie.php");
 ?>
