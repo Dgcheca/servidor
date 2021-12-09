@@ -18,7 +18,7 @@
             $valor = 0;
             if ($figura >= 2 && $figura <=10) {
                 $valor = $figura;
-            } else if ($figura == "jota" || $figura == "reina" || $figura == "rey") {
+            } else if ($figura == "Jota" || $figura == "Reina" || $figura == "Rey") {
                $valor = 10;
             } else {
                 $valor = 1;

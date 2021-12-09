@@ -2,7 +2,7 @@
 
     class BarajaInglesa extends Baraja{
         private static $palos = ["Corazones","Diamantes","Picas","Treboles"];
-        private static $figuras = ["As",2,3,4,5,6,7,8,9,10,"jota","reina","rey"];
+        private static $figuras = ["As",2,3,4,5,6,7,8,9,10,"Jota","Reina","Rey"];
 
         public function __construct(){
             parent::__construct();
