@@ -6,7 +6,7 @@ include("header.php");
 include("lib.php");
 
 
-$prestamo = cargarPrestamoID($_GET['id'])[0];
+$prestamo = cargarPrestamoID($_GET['id']);
 ?>
 
 

@@ -53,7 +53,7 @@ function cargarLibroID($id)
 function eliminarLibro($id)
 {
     $conexion = conexion();
-    $stmt = $conexion->prepare("DELETE FROM libros WHERE Libros.id = ?");
+    $stmt = $conexion->prepare("DELETE FROM libros WHERE libros.id = ?");
     $stmt->bindValue(1, $id);
     $stmt->execute();
     $conexion = null;
@@ -147,7 +147,7 @@ function  incluirNuevoUsuario($nombre, $apellidos, $dni, $edad, $telefono, $dire
 function eliminarUsuario($id)
 {
     $conexion = conexion();
-    $stmt = $conexion->prepare("DELETE FROM usuarios WHERE Usuarios.id = ?");
+    $stmt = $conexion->prepare("DELETE FROM usuarios WHERE usuarios.id = ?");
     $stmt->bindValue(1, $id);
     $stmt->execute();
     $conexion = null;
@@ -180,9 +180,10 @@ function cargarPrestamoID($id)
 {
     $conexion = conexion();
     $stmt = $conexion->prepare("SELECT prestamos.id, prestamos.fecha_inicio, prestamos.fecha_fin, prestamos.estado,usuarios.id as usuarioId, usuarios.nombre,libros.id as libroId, libros.titulo
-    FROM prestamos,usuarios,libros WHERE prestamos.id = '$id';");
-    $stmt->execute();
-    $prestamos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    FROM prestamos JOIN usuarios ON prestamos.id_usuario = usuarios.id JOIN libros ON prestamos.id_libro = libros.id WHERE prestamos.id = '$id';");
+    $stmt->execute();  
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $prestamos = $stmt->fetch();
     return $prestamos;
     $conexion = null;
 }
