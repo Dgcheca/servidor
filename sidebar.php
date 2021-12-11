@@ -54,6 +54,7 @@
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="Tema6/agenda/" class="link-dark rounded">Agenda</a></li>
 					<li><a href="Tema6/BlackJack/" class="link-dark rounded">BlackJack</a></li>
+					<li><a href="Tema6/BlackJackAjax/" class="link-dark rounded">BlackJackAjax</a></li>
 				</ul>
 			</div>
 		</li>

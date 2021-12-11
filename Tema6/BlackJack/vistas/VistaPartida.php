@@ -37,8 +37,13 @@ class VistaPartida
 
         $crupier = $partida->getCrupier();
         $cartasCrupier = $crupier->getMano();
-        foreach ($cartasCrupier as $carta) {
+        foreach ($cartasCrupier as $key => $carta) {
+            if ($key == 0) {
+                $cartaimagen = $carta->getPalo() . "" . $carta->getFigura();
+                echo '<img class="carta" src="img/' . $cartaimagen . '.png" alt="">';
+            } else {
             echo '<img class="carta" src="img/reverso.jpg" alt="">';
+            }
         }
 
         echo '</div></div>
