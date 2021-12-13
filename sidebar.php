@@ -58,5 +58,15 @@
 				</ul>
 			</div>
 		</li>
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema7" aria-expanded="false">
+				TEMA 7
+			</button>
+			<div class="collapse" id="tema7">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="Tema7/ReservasRestaurante/" class="link-dark rounded">ReservasRestaurante</a></li>
+				</ul>
+			</div>
+		</li>
 	</ul>
 </div>
