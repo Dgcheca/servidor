@@ -65,6 +65,7 @@
 			<div class="collapse" id="tema7">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="Tema7/ReservasRestaurante/" class="link-dark rounded">ReservasRestaurante</a></li>
+					<li><a href="Tema7/ReservasRestauranteTerminado/" class="link-dark rounded">ReservasRestauranteTerminado</a></li>
 				</ul>
 			</div>
 		</li>
