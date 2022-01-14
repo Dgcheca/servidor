@@ -8,7 +8,7 @@ require 'vendor/autoload.php';
         public static function conectar($database='agenda',$host="mongodb://localhost:27017", $user = 'root', $password = 'root') {
             try {
                 //CONEXIÓN A MONGODB CLOUD ATLAS. Comentar esta línea para conectar en local.
-                $host =   'mongodb+srv://DGCheca:jaroso@MDBAtlas.it8sj.mongodb.net/'.$database.'?retryWrites=true&w=majority';
+                $host = 'mongodb+srv://DGCheca:jaroso@MDBAtlas.it8sj.mongodb.net/agenda?retryWrites=true&w=majority';
                 //$host = "mongodb://$user:$password@172.29.0.2:27017/"; //MongoDB en Docker
                 $conexion = (new Client($host));
             } catch (Exception $e){
