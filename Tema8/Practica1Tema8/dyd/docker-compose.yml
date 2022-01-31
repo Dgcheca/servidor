@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: docker-Mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_USERNAME: DGCheca
+      MONGO_INITDB_PASSWORD: jaroso
+    volumes:
+      - ./mongo-volume:/data/db
+    ports:
+      - "27017-27019:27017-27019"
+    networks:
+      - net_app
+
+  web:
+    build: 
+      context: .
+    container_name: docker-php-dydgenerator
+    volumes:
+      - ./dydgenerator:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - net_app
+    depends_on:
+      - mongodb
+
+  composer:
+    image: composer:1.10
+    command: composer install --ignore-platform-reqs
+    volumes:
+      - ./dydgenerator:/app
+    
+volumes:
+  mongo-volume:
+    driver: local
+
+networks:
+  net_app:
+    driver: bridge
