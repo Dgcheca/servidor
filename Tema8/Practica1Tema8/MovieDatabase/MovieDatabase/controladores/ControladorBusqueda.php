@@ -25,7 +25,8 @@
             } else {
                 $serie = json_decode($resultado); //PASAMOS EL JSON A OBJETO
                 $generos = self::buscarGenero($serie);
-                VistaBusqueda::renderDetalle($serie,$generos);
+                $listacomentarios = ComentarioBD::leerComentarios($id);
+                VistaBusqueda::renderDetalle($serie,$generos,$listacomentarios);
             }
         }
         public static function buscarGenero($serie){//PARA BUSCAR LOS GENEROS A LOS QUE PERTENECE CADA SERIE
@@ -47,19 +48,9 @@
                 return $generos;
             }
         }
-
-        public static function pintarComentarios($id){      
-            $listacomentarios = ComentarioBD::leerComentarios($id);
-            VistaBusqueda::renderComentarios($listacomentarios);
-        }
-        public static function pintarEscribirComentario($id){
-            VistaBusqueda::renderEscribirComentarios($id);
-        }
-
         public static function guardarComentario($id,$nick,$nota,$texto){
             ComentarioBD::escribirComentario($id,$nick,$nota,$texto);
-            $listacomentarios = ComentarioBD::leerComentarios($id);
-            VistaBusqueda::renderComentarios($listacomentarios);
+            self::pintarEnDetalle($id);
         }
     }
 

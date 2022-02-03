@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieDatabase</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="vistas/estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
@@ -76,6 +78,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script>
+    $(document).ready(function(){
+        $("#listapeliculas").on("click", "#vercomentarios", function(){
+            $("#cajacomentarios").toggle();
+        } )
+        $("#listapeliculas").on("click", "#escribircomentarios", function(){
+            $("#cajaescribircomentario").toggle();
+        } )
+
+        
+    });
+     
     window.addEventListener("load", inicio);
     async function inicio() {
         //BOTON DE DENTRO - HACE UNA PETICION POR GENERO
@@ -114,32 +127,6 @@
                 document.getElementById("listapeliculas").innerHTML = await response.text();
             }
         });
-        document.getElementById("listapeliculas").addEventListener("click", async function(e) {
-            let botonvercomentarios = e.target.closest("button[id=vercomentarios]");
-            if (botonvercomentarios) {
-                const datos = new FormData();
-                datos.append("accion", "vercomentarios");
-                datos.append("id", botonvercomentarios.value);
-                const response = await fetch("enrutador.php", {
-                    method: 'POST',
-                    body: datos
-                });
-                document.getElementById("cajacomentarios").innerHTML = await response.text();
-            }
-        });
-        document.getElementById("listapeliculas").addEventListener("click", async function(e) {
-            let botonescribircomentarios = e.target.closest("button[id=escribircomentarios]");
-            if (botonescribircomentarios) {
-                const datos = new FormData();
-                datos.append("accion", "escribircomentario");
-                datos.append("id", botonescribircomentarios.value);
-                const response = await fetch("enrutador.php", {
-                    method: 'POST',
-                    body: datos
-                });
-                document.getElementById("cajacomentarios").innerHTML = await response.text();
-            }
-        });
 
         document.getElementById("listapeliculas").addEventListener("click", async function(e) {
             let botonenviarcomentario = e.target.closest("button[id=enviarcomentario]");
@@ -156,7 +143,7 @@
                     method: 'POST',
                     body: datos
                 });
-                document.getElementById("cajacomentarios").innerHTML = await response.text();
+                document.getElementById("listapeliculas").innerHTML = await response.text();
             }
         });
 

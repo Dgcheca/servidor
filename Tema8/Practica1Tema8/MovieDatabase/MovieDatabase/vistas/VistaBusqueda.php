@@ -16,9 +16,7 @@
                 </div>";
             }
         }
-        public static function renderDetalle($serie,$generos){
-          
-            
+        public static function renderDetalle($serie,$generos,$comentarios){
             echo "<div name='tarjeta' class='card text-dark m-2'>
                     <div class='card-body'>        
                         <div class='row mt-2'>
@@ -47,77 +45,78 @@
                     </div>
                 </div>
 
-                <hr class='m-2'>
+                <hr class='m-2'>";
+                //PRINCIPIO CAJAESCRIBIRCOMENTARIO
+                echo "
+                <div id='cajaescribircomentario'>
+                    <div class='card text-dark'>
+                        <div class='container m-5'>
+                            <form id='formularioComentario'>
+                                <div class='row mx-5 px-5 justify-content-center'>
+                    
+                                    <div class='mb-3 col-6'>
+                                        <label for='nickcomentario' class='form-label'>Nick</label>
+                                        <input class='form-control' id='nickcomentario' type='text' required placeholder='Nick' aria-label=''>
+                                    </div>
 
-                <div id='cajacomentarios'></div>";
-        }
+                                    <div class='mb-3 col-1 '>
+                                        <label for='notacomentario' class='form-label'>Nota</label>
+                                        <input class='form-control' id='notacomentario' type='number' required placeholder='1' min='1' max='10' aria-label='Nota'>
+                                    </div>
 
-        public static function renderComentarios($comentarios){
-         
-            echo "<div class='card text-dark'>";
-            if (count($comentarios) > 0){
-                foreach ($comentarios as $comentario) {
-                    echo "<div name='tarjeta' class='card m-2'>
-                            <div class='card-body'>
-                                <div class='row'>
-                                    <div class='col-2'>
-                                    Nick: 
-                            
-                            ";
-                                    echo $comentario->getNick();
-                    echo "          </div>
-                                    <div class='col-1'>
-                                    Nota: ";
-                                    echo $comentario->getNota();
-                    echo "          </div>
                                 
-                                
-                                    <div class='col-9'>
-                                    Reseña: ";
-                                    echo $comentario->getTexto();
-                    echo "          </div>
-                                </div>
-                            </div>
-                        </div>";
-                }
-            
-            } else {
-                echo "<p class='m-5'>No hay comentarios para esta serie</p>";
-            }
-            echo "</div>";
-        }
-
-        public static function renderEscribirComentarios($id){
-            echo "<div class='card text-dark'>
-                     <div class='container m-5'>
-                        <form id='formularioComentario'>
-                            <div class='row mx-5 px-5 justify-content-center'>
-                                <div class='mb-3 col-6'>
-                                    <label for='nickcomentario' class='form-label'>Nick</label>
-                                    <input class='form-control' id='nickcomentario' type='text' required placeholder='Nick' aria-label=''>
                                 </div>
 
-                                <div class='mb-3 col-1 '>
-                                    <label for='notacomentario' class='form-label'>Nota</label>
-                                    <input class='form-control' id='notacomentario' type='number' required placeholder='1' min='1' max='10' aria-label='Nota'>
+                                <div class='row mx-5 px-5 justify-content-center'>
+                                    <div class='mb-3 col-7'>
+                                        <label for='textocomentario' class='form-label'></label>
+                                        <textarea class='form-control' id='textocomentario' rows='5' aria-label='' required></textarea>
+                                    </div>
                                 </div>
-
-                            
-                            </div>
-
-                            <div class='row mx-5 px-5 justify-content-center'>
-                                <div class='mb-3 col-7'>
-                                    <label for='textocomentario' class='form-label'></label>
-                                    <textarea class='form-control' id='textocomentario' rows='5' aria-label='' required></textarea>
+                                <div class='row m-5 justify-content-center'>
+                                    <button type='button' class='btn btn-danger col-2' name='enviarcomentario' accion='enviarcomentario' id='enviarcomentario' value='{$serie->id}'>Enviar Comentarios</button>
                                 </div>
-                            </div>
-
-                            <div class='row m-5 justify-content-center'>
-                                <button type='button' class='btn btn-danger col-2' name='enviarcomentario' id='enviarcomentario' value='$id'>Enviar Comentarios</button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>";
+                //FINAL CAJAESCRIBIRCOMENTARIO
+                
+                //PRINCPIO CAJACOMENTARIOS
+                echo "
+                <div id='cajacomentarios'>
+                    <div class='card text-dark'>";
+                        if (count($comentarios) > 0){
+                            foreach ($comentarios as $comentario) {
+                                echo "<div name='tarjeta' class='card m-2'>
+                                        <div class='card-body'>
+                                            <div class='row'>
+                                                <div class='col-2'>
+                                                Nick: 
+                                        
+                                        ";
+                                                echo $comentario->getNick();
+                                echo "          </div>
+                                                <div class='col-1'>
+                                                Nota: ";
+                                                echo $comentario->getNota();
+                                echo "          </div>
+                                            
+                                            
+                                                <div class='col-9'>
+                                                Reseña: ";
+                                                echo $comentario->getTexto();
+                                echo "          </div>
+                                            </div>
+                                        </div>
+                                    </div>";
+                            }
+                        
+                        } else {
+                            echo "<p class='m-5'>No hay comentarios para esta serie</p>";
+                        }
+                        echo "</div></div>";
+                        //FINAL CAJA COMENTARIOS
         }
     }
 

@@ -44,12 +44,6 @@ function filtrado($datos){
             if($_POST["accion"] == "verdatos"){
                 ControladorBusqueda::pintarEnDetalle($_POST["id"]);
             }
-            if($_POST["accion"] == "vercomentarios") {
-                ControladorBusqueda::pintarComentarios($_POST["id"]);
-            }
-            if($_POST["accion"] == "escribircomentario") {
-                ControladorBusqueda::pintarEscribirComentario($_POST["id"]);
-            }
             if($_POST["accion"] == "enviarcomentario") {
                 ControladorBusqueda::guardarComentario($_POST["id"],$_POST["nick"],$_POST["nota"],$_POST["texto"]);
             }
