@@ -15,7 +15,8 @@ services:
     ports:
       - "27017-27019:27017-27019"
     networks:
-      - net_app
+      dyd-net:
+        ipv4_address: 172.21.0.2
 
   web:
     build: 
@@ -26,7 +27,8 @@ services:
     ports:
       - "8080:80"
     networks:
-      - net_app
+      dyd-net:
+        ipv4_address: 172.21.0.3
     depends_on:
       - mongodb
 
@@ -41,5 +43,9 @@ volumes:
     driver: local
 
 networks:
-  net_app:
+  dyd-net:
     driver: bridge
+    ipam:
+     config:
+       - subnet: 172.21.0.0/16
+         gateway: 172.21.0.1

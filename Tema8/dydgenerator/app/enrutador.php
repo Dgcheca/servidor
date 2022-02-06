@@ -38,8 +38,32 @@ function filtrado($datos){
     if ($_POST){
         if(isset($_POST["accion"])){
             if($_POST["accion"] == "empezar"){
-                ControladorGenerador::pintarOpciones();
+                ControladorGenerador::pintarRazas();
             }
+            if($_POST["accion"] == "verdatos"){
+                ControladorGenerador::pintarDatos($_POST["id"]);
+            }
+            if($_POST["accion"] == "elegirRaza"){
+                ControladorGenerador::guardarRaza($_POST["id"], $_POST["url"]);
+                
+            }
+            if($_POST["accion"] == "verClases"){
+                ControladorGenerador::pintarClases();
+            }           
+            if($_POST["accion"] == "verDatosClase"){
+                ControladorGenerador::pintarDatosClase($_POST["id"]);
+            }
+            if($_POST["accion"] == "elegirClase"){
+                ControladorGenerador::guardarClase($_POST["id"],$_POST["url"]);
+            }
+            if($_POST["accion"] == "terminar"){
+                ControladorGenerador::guardarPersonaje($_POST["nombrepj"]);
+            }
+            if($_POST["accion"] == "verhistorial"){
+                ControladorGenerador::verHistorialPersonajes();
+            }
+
+            
         }
     }
 ?>
