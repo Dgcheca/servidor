@@ -31,7 +31,7 @@
             echo 
                 "<div name='tarjeta' class='card text-dark m-2 bg-light'>  <div class='row'>
                     <div class='col-4'>
-                        <img src='imagenes/{$resultado->name}.png' class='card-img-top mt-2' style='width: 22rem;' alt='...'>
+                        <img src='imagenes/{$resultado->index}.png' class='card-img-top mt-2' style='width: 22rem;' alt='...'>
                     </div>
                     <div class='col-8'>
                         <div class='card-body'>

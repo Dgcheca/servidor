@@ -5,8 +5,12 @@ async function createCripto(req, res) {
     const cripto = new Cripto();
     const params = req.body;
 
-    cripto.title = params.title;
-    cripto.description = params.description;
+    cripto.nombre = params.nombre;
+    cripto.simbolo = params.simbolo;
+    cripto.descripcion = params.descripcion;
+    cripto.precio = params.precio;
+    cripto.variacion = params.variacion;
+    cripto.capitalizacion = params.capitalizacion;
 
     try {
         const criptoStore = await cripto.save();
@@ -24,7 +28,7 @@ async function createCripto(req, res) {
 
 async function getCriptos(req,res) {
     try {
-        const criptos = await Cripto.find({ completed: false }).sort({ create_at: -1 });
+        const criptos = await Cripto.find();
 
         if (!criptos) {
             res.status(400).send({ msg: "Error al obtener las tareas"});

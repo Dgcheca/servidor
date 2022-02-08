@@ -5,11 +5,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //Cargar rutas
-const task_routes = require("./routes/task");
-const user_routes = require("./routes/user");
+const cripto_routes = require("./routes/criptomoneda");
 
 //rutas base
-app.use("/api", task_routes);
-app.use("/api", user_routes);
+app.use("/api", cripto_routes);
 
 module.exports = app;

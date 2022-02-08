@@ -15,17 +15,17 @@ const CriptoSchema = Schema({
         require: true,
     },
     precio: {
-        type: Number,
+        type: String,
         require: true,
     },
     variacion: {
-        type: Number,
+        type: String,
         require: true,
     },
     capitalizacion: {
-        type: Number,
+        type: String,
         require: true,
     }
 });
 
-module.exports = mongoose.model("Criptomoneda", CriptoSchema);
+module.exports = mongoose.model("criptomoneda", CriptoSchema);
