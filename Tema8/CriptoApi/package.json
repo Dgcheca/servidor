@@ -1,0 +1,22 @@
+{
+  "name": "node-express",
+  "version": "0.0.1",
+  "description": "Rest API Curso",
+  "main": "index.js",
+  "author": "DgCheca",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.1.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

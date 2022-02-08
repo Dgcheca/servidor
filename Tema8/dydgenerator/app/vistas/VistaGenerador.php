@@ -10,7 +10,7 @@
                 ";
             foreach($opciones as $opcion){
                 echo "<div name='tarjeta' class='card text-dark m-2 bg-light d-inline-block' style='width: 22rem;'>
-                        <img src='/imagenes/{$opcion->index}.png' class='card-img-top mt-2' alt='...' style='height:26rem'>
+                        <img src='imagenes/{$opcion->index}.png' class='card-img-top mt-2' alt='...' style='height:26rem'>
                         <div class='card-body'>
                             <h5 class='card-title'>{$opcion->name}</h5>
                         </div>
@@ -31,7 +31,7 @@
             echo 
                 "<div name='tarjeta' class='card text-dark m-2 bg-light'>  <div class='row'>
                     <div class='col-4'>
-                        <img src='/imagenes/{$resultado->name}.png' class='card-img-top mt-2' style='width: 22rem;' alt='...'>
+                        <img src='imagenes/{$resultado->name}.png' class='card-img-top mt-2' style='width: 22rem;' alt='...'>
                     </div>
                     <div class='col-8'>
                         <div class='card-body'>
@@ -81,7 +81,7 @@
             ";
             foreach($opciones as $opcion){
                 echo "<div name='tarjeta' class='card text-dark m-2 bg-light d-inline-block' style='width: 22rem;'>
-                        <img src='/imagenes/{$opcion->name}.png' class='card-img-top mt-2' alt='...' style='height:26rem'>
+                        <img src='imagenes/{$opcion->name}.png' class='card-img-top mt-2' alt='...' style='height:26rem'>
                         <div class='card-body'>
                             <h5 class='card-title'>{$opcion->name}</h5>
                         </div>
@@ -119,7 +119,7 @@
             echo 
                 "<div name='tarjeta' class='card text-dark m-2 bg-light'>  <div class='row'>
                     <div class='col-4'>
-                        <img src='/imagenes/{$resultado->name}.png' class='card-img-top mt-2' style='width: 22rem;' alt='...'>
+                        <img src='imagenes/{$resultado->name}.png' class='card-img-top mt-2' style='width: 22rem;' alt='...'>
                     </div>
                     <div class='col-8'>
                         <div class='card-body'>
@@ -196,7 +196,7 @@
             foreach($listaPersonajes as $opcion){
                 echo "
                 <div name='tarjeta' class='card text-dark m-2 bg-light d-inline-block' style='width: 22rem;'>
-                    <img src='/imagenes/".$opcion->getRaza().".png' class='card-img-top mt-2' alt='...' style='height:26rem'>
+                    <img src='imagenes/".$opcion->getRaza().".png' class='card-img-top mt-2' alt='...' style='height:26rem'>
                     <div class='card-body'>
                         <h4 class='card-title'>Nombre: ".$opcion->getNombre()."</h4>
                         <p class='card-text'>Raza: ".$opcion->getRaza()."</p>

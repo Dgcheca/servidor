@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 
         public static function conectar($database='series',$host="", $user = 'root', $password = 'root') {
             try {
-                $host = "mongodb://$user:$password@172.20.0.2:27017/"; //MongoDB en Docker
+                $host = "mongodb://$user:$password@172.22.0.2:27017/"; //MongoDB en Docker
                 $conexion = (new Client($host))->{$database};
             } catch (Exception $e){
                 echo $e->getMessage();

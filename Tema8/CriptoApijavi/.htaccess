@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(.+)$ router.php?url=$1 [L,QSA]

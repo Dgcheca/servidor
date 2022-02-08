@@ -1,0 +1,18 @@
+{
+    "id": 1, 
+    "nombre": "Bitcoin",
+    "simbolo": "BTC", 
+    "descrip": "La más usado y famosa",
+    "precio": 33707,
+    "24h": -1.3,
+    "capitalizacion": 638577496947
+},
+{
+    "id": 2, 
+    "nombre": "Ethereum",
+    "simbolo": "ETH", 
+    "descrip": "La más minada",
+    "precio": 2342,
+    "24h": -0.36,
+    "capitalizacion": 279480318008
+},

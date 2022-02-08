@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
     class PersonajeBD{
         public static function conectar($database='creaciones',$host="", $user='root', $password='root') {
             try {
-                $host = "mongodb://$user:$password@172.21.0.2:27017"; //MongoDB en Docker
+                $host = "mongodb://$user:$password@172.22.0.2:27017"; //MongoDB en Docker
                 $conexion = (new Client($host))->{$database};
             } catch (Exception $e){
                 echo $e->getMessage();

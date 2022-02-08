@@ -1,3 +1,4 @@
 \vendor
 \mongo-volume
 \entregasDocker
+\node_modules
