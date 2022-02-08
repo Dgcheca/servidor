@@ -1,7 +1,7 @@
 const { restart } = require("nodemon");
-const Cripto = require("../models/task");
+const Cripto = require("../models/criptomoneda");
 
-async function createTask(req, res) {
+async function createCripto(req, res) {
     const cripto = new Cripto();
     const params = req.body;
 
@@ -9,12 +9,12 @@ async function createTask(req, res) {
     cripto.description = params.description;
 
     try {
-        const taskStore = await task.save();
+        const criptoStore = await cripto.save();
 
-        if (!taskStore) {
+        if (!criptoStore) {
             res.status(400).send({msg: "No se ha guardado la tarea"});
         } else {
-            res.status(200).send({task: taskStore });
+            res.status(200).send({cripto: criptoStore });
         }
 
     } catch (error) {
@@ -22,43 +22,43 @@ async function createTask(req, res) {
     }
 }
 
-async function getTasks(req,res) {
+async function getCriptos(req,res) {
     try {
-        const tasks = await Task.find({ completed: false }).sort({ create_at: -1 });
+        const criptos = await Cripto.find({ completed: false }).sort({ create_at: -1 });
 
-        if (!tasks) {
+        if (!criptos) {
             res.status(400).send({ msg: "Error al obtener las tareas"});
         } else {
-            res.status(200).send(tasks);
+            res.status(200).send(criptos);
         }
     } catch (error) {
         res.status(500).send(error);
     }
 }
 
-async function getTask(req, res){
-    const idTask = req.params.id;
+async function getCripto(req, res){
+    const idCripto = req.params.id;
     try {
-        const task = await Task.findById(idTask);
+        const cripto = await Cripto.findById(idCripto);
 
-        if (!task) {
+        if (!cripto) {
             res.status(400).send({msg : "No se ha encontrado la tarea indicada"})
         } else {
-            res.status(200).send(task);
+            res.status(200).send(cripto);
         }
     } catch (error) {
         res.status(500).send(error)
     }
 }
 
-async function updateTask(req, res){
-    const idTask = req.params.id;
+async function updateCripto(req, res){
+    const idCripto = req.params.id;
     const params = req.body;
 
     try {
-        const task = await Task.findByIdAndUpdate(idTask,params);
+        const cripto = await Cripto.findByIdAndUpdate(idCripto,params);
 
-        if (!task) {
+        if (!cripto) {
             res.status(400).send({msg: "No se ha podido actualizar la tarea"});
         } else {
             res.status(200).send({msg: "Actualizacion completada"});
@@ -68,12 +68,12 @@ async function updateTask(req, res){
     }
 }
 
-async function deleteTask(req, res){
-    const idTask = req.params.id;
+async function deleteCripto(req, res){
+    const idCripto = req.params.id;
 
     try {
-        const task = await Task.findByIdAndDelete(idTask);
-        if (!task) {
+        const cripto = await Cripto.findByIdAndDelete(idCripto);
+        if (!cripto) {
             res.status(400).send({msg: "no se ha podido eliminar la tarea"})
         } else {
             res.status(200).send({msg: "Tarea eliminada correctamente"})
@@ -83,9 +83,9 @@ async function deleteTask(req, res){
     }
 }
 module.exports = {
-    createTask,
-    getTasks,
-    getTask,
-    updateTask,
-    deleteTask,
+    createCripto,
+    getCriptos,
+    getCripto,
+    updateCripto,
+    deleteCripto,
 };
