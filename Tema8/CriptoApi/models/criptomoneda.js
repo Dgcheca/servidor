@@ -15,15 +15,15 @@ const CriptoSchema = Schema({
         require: true,
     },
     precio: {
-        type: String,
+        type: Number,
         require: true,
     },
     variacion: {
-        type: String,
+        type: Number,
         require: true,
     },
     capitalizacion: {
-        type: String,
+        type: Number,
         require: true,
     }
 });
