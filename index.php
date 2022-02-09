@@ -106,6 +106,9 @@
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li><a href="Tema8/dydgenerator/app" class="link-dark rounded">DyDGenerator</a></li>
               </ul>
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="Tema8/CriptoPrueba" class="link-dark rounded">CriptoPrueba</a></li>
+              </ul>
             </div>
           </li>
         </ul>
