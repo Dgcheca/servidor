@@ -11,7 +11,7 @@ mongoose.connect(urlMongoDb, (err,res) =>{
             console.log("conexion a la base de datos correcta");
 
             app.listen(port, ()=> {
-                console.log("A tope con el servidor");
+                console.log("A tope con el servidor en puerto: " + port);
             });
             
         }

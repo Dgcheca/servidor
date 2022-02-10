@@ -17,12 +17,7 @@
             <div class="col-md-2">
                 <button type="button" id="vertodas" class="btn btn-primary">Ver todas</button>
             </div>
-            <div class="col-md-2">
-                <button type="button" id="vertodas" class="btn btn-primary">Ver todas</button>
-            </div>
-            <div class="col-md-2">
-                <button type="button" id="vertodas" class="btn btn-primary">Ver todas</button>
-            </div>
+   
             
         </div>
         <div class="row">
@@ -41,22 +36,7 @@
           const response = await fetch("enrutador.php", { method: 'POST', body: datos });   
           document.getElementById("resultado").innerHTML = await response.text();
         });
-    }
-    async function inicio() {
-        document.getElementById("vertodas").addEventListener("click", async function(e) {
-          const datos = new FormData(); 
-          datos.append("accion", "vertodas");
-          const response = await fetch("enrutador.php", { method: 'POST', body: datos });   
-          document.getElementById("resultado").innerHTML = await response.text();
-        });
-    }
-    async function inicio() {
-        document.getElementById("vertodas").addEventListener("click", async function(e) {
-          const datos = new FormData(); 
-          datos.append("accion", "vertodas");
-          const response = await fetch("enrutador.php", { method: 'POST', body: datos });   
-          document.getElementById("resultado").innerHTML = await response.text();
-        });
+    
     }
    
 </script>
