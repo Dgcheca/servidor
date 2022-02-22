@@ -1,6 +1,0 @@
-{
-    "require": {
-        "ext-mbstring": "*",
-        "mongodb/mongodb": "^1.11"
-    }
-}

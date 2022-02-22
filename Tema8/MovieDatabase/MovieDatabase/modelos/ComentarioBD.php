@@ -1,7 +1,7 @@
 <?php 
 
 use MongoDB\Client;
-require 'vendor/autoload.php';
+require '/var/www/html/vendor/autoload.php';
 
     class ComentarioBD{
 
